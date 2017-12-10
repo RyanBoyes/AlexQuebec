@@ -29,7 +29,7 @@ import java.io.File;
 public class Jepordy implements ActionListener {
 	private JButton firstButton;
 	private JButton secondButton;
-	private JButton thirdButton, fourthButton;
+	private JButton thirdButton, fourthButton, fifthButton;
 	
 	private JPanel quizPanel;
 	int score = 0;
@@ -62,21 +62,29 @@ public class Jepordy implements ActionListener {
 
 		
 		// 6. Use the createButton method to set the value of firstButton 
-		JButton button1 = createButton("200");
+		firstButton = createButton("200");
+		secondButton = createButton("400");
+		thirdButton = createButton("600");
+		fourthButton = createButton("800");
+		fifthButton = createButton("1000");
 	
 	// 7. Add the firstButton to the quizPanel
-		quizPanel.add(button1);
+		quizPanel.add(firstButton);
+		quizPanel.add(secondButton);
+		quizPanel.add(thirdButton);
+		quizPanel.add(fourthButton);
+		quizPanel.add(fifthButton);
 		
 		// 8. Write the code inside the createButton() method below. Check that your game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 		
 		
 		// 9. Use the secondButton variable to hold a button using the createButton method
-		secondButton = createButton("400");
+		
 		// 10. Add the secondButton to the quizPanel
-		quizPanel.add(secondButton);
+		
 		// 11. Add action listeners to the buttons (2 lines of code)
 		firstButton.addActionListener(this); secondButton.addActionListener(this); 
-		thirdButton.addActionListener(this); fourthButton.addActionListener(this);
+		thirdButton.addActionListener(this); fourthButton.addActionListener(this); fifthButton.addActionListener(this);
 		
 		// 12. Fill in the actionPerformed() method below
 				
@@ -89,6 +97,7 @@ public class Jepordy implements ActionListener {
 
 	/*
 	 * 13. Use the method provided to play the Jeopardy theme music 
+	 * 
 	 * 
 	 * 14. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
 	 *
@@ -135,6 +144,9 @@ public class Jepordy implements ActionListener {
 		}
 		else if(buttonPressed==fourthButton) {
 			askQuestion("Which state(s) are the furthest north, east, and west?", "Alaska", 800);
+		}
+		else if(buttonPressed==fifthButton) {
+			askQuestion("Which 2 U.S states border the most other states?", "Tennessee and Missouri", 1000);
 		}
 
 
